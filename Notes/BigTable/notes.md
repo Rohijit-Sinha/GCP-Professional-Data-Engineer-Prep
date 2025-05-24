@@ -57,6 +57,10 @@ Similarly, when you add a new cluster to an existing instance, Bigtable copies y
 
 Replication has some latency, and **consistency between clusters is eventual**.
 
+#### Consistency
+- Eventual consistency
+- Read-your-writes consistency
+- Strong consistency
 
 ### BigTable Tables
 
@@ -169,3 +173,10 @@ examplepetstore#tablet#a6b81f79#20190501
 examplepetstore#tablet#a0b81f79#20190502
 ```
 
+## Eliminate hotspots in Cloud Bigtable
+A Cloud Bigtable table is sharded into blocks of contiguous rows, called tablets.  
+Each tablet is associated with a Bigtable node (or “tablet server”).  
+
+A hot tablet is a tablet that uses a disproportionately large percentage of a node’s CPU compared to other tablets associated with that node. This unbalanced usage can happen due to unanticipated high volume of requests to a particular data point, or uneven table modeling during the initial schema design.
+
+It is best to redesign the row key to ensure a single tablet does not have multiple rows that are frequently queried.

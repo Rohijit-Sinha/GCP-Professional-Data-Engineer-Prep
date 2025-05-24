@@ -66,7 +66,7 @@ When you do this with Object Versioning enabled, if there already exists a live 
 
 
 ###  Object Lifecycle Management
-To support common use cases like setting a Time to Live (TTL) for objects, retaining noncurrent versions of objects, or "downgrading" storage classes of objects to help manage costs, Cloud Storage offers the Object Lifecycle Management feature.
+To support common use cases like **setting a Time to Live** (TTL) for objects, **retaining noncurrent versions of objects**, or **"downgrading" storage classes** of objects to help manage costs, Cloud Storage offers the Object Lifecycle Management feature.
 
 In order to use Object Lifecycle Management, you define a lifecycle configuration, which must be set on a bucket. The configuration contains a set of rules which apply to current and future objects in the bucket. 
 
@@ -144,6 +144,10 @@ Grants read-only access to Storage Insights inventory reports, inventory report 
 #### Storage Insights Collector Service
 Grants read access to object metadata in inventory reports and Storage Insights datasets.
 
+### Access Control Lists
+Each individual bucket or object can have an ACL.
+
+Access is granted if **either IAM or ACL grants** it.
 
 ## GCS Data Transfer
 [<img src="images/GCS_Data_Transfer.png">]

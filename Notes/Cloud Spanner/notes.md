@@ -43,6 +43,12 @@ In some cases, for example, when the row has just been updated while the read re
 
 [<img src="images/query_life_stale_read.png">]
 
+### Consistency
+Spanner provides clients with the strictest concurrency-control guarantees for transactions, which is called external consistency2. Under external consistency, the system behaves as if all transactions were executed sequentially, even though Spanner actually runs them across multiple servers.
+
+It is done using Timestamps and multi-version concurrency control.  
+For timestamp, Truetime and atomic clocks are used.
+
 ## Auto Scaling
 Two ways of autoscaling:
 - Configure your instance manually to add or remove compute capacity.
